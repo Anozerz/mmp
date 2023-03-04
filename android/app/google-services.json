@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "844479837411",
+    "project_id": "mmp-app-7170e",
+    "storage_bucket": "mmp-app-7170e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844479837411:android:da0fc97cd6962f769381d6",
+        "android_client_info": {
+          "package_name": "com.mycompany.mmpapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844479837411-hruhn2094sbtdv1cervemurraqh3lecq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.mmpapp",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "844479837411-scvvcq6fnlptqcl199r9ma4flg3217dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLLxPOVbXyvulx1UKN5WcCpytDKhLxY9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844479837411-scvvcq6fnlptqcl199r9ma4flg3217dc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "844479837411-i2eljbub9ljc3a33g2qekiaog5bdn37r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.mmpapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
