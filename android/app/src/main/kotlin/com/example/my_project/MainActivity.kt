@@ -1,4 +1,4 @@
-package com.mycompany.mmpapp
+package com.SebastianDittmann.mmpapp
 
 import io.flutter.embedding.android.FlutterActivity
 
