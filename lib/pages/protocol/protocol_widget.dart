@@ -81,10 +81,6 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                 );
               }
               List<ProtocolRecord> columnProtocolRecordList = snapshot.data!;
-              // Return an empty Container when the item does not exist.
-              if (snapshot.data!.isEmpty) {
-                return Container();
-              }
               final columnProtocolRecord = columnProtocolRecordList.isNotEmpty
                   ? columnProtocolRecordList.first
                   : null;
