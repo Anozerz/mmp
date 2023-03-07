@@ -29,13 +29,6 @@ class _$ProtocolRecordSerializer
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
-    value = object.duration;
-    if (value != null) {
-      result
-        ..add('duration')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.goal1;
     if (value != null) {
       result
@@ -54,13 +47,6 @@ class _$ProtocolRecordSerializer
     if (value != null) {
       result
         ..add('goal3')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.mindful;
-    if (value != null) {
-      result
-        ..add('mindful')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -85,13 +71,6 @@ class _$ProtocolRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.sleep;
-    if (value != null) {
-      result
-        ..add('sleep')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.activityDays;
     if (value != null) {
       result
@@ -104,6 +83,26 @@ class _$ProtocolRecordSerializer
         ..add('created_at')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
+    }
+    value = object.sleepHours;
+    if (value != null) {
+      result
+        ..add('sleep_hours')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.durationDays;
+    if (value != null) {
+      result
+        ..add('duration_days')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.mindfulMinutes;
+    if (value != null) {
+      result
+        ..add('mindful_minutes')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -134,10 +133,6 @@ class _$ProtocolRecordSerializer
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
-        case 'duration':
-          result.duration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'goal1':
           result.goal1 = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -148,10 +143,6 @@ class _$ProtocolRecordSerializer
           break;
         case 'goal3':
           result.goal3 = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'mindful':
-          result.mindful = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'waiver1':
@@ -166,10 +157,6 @@ class _$ProtocolRecordSerializer
           result.waiver3 = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'sleep':
-          result.sleep = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'activity_days':
           result.activityDays = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
@@ -177,6 +164,18 @@ class _$ProtocolRecordSerializer
         case 'created_at':
           result.createdAt = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'sleep_hours':
+          result.sleepHours = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'duration_days':
+          result.durationDays = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'mindful_minutes':
+          result.mindfulMinutes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -195,15 +194,11 @@ class _$ProtocolRecord extends ProtocolRecord {
   @override
   final DocumentReference<Object?>? user;
   @override
-  final String? duration;
-  @override
   final String? goal1;
   @override
   final String? goal2;
   @override
   final String? goal3;
-  @override
-  final String? mindful;
   @override
   final String? waiver1;
   @override
@@ -211,11 +206,15 @@ class _$ProtocolRecord extends ProtocolRecord {
   @override
   final String? waiver3;
   @override
-  final String? sleep;
-  @override
   final int? activityDays;
   @override
   final DateTime? createdAt;
+  @override
+  final int? sleepHours;
+  @override
+  final String? durationDays;
+  @override
+  final String? mindfulMinutes;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -224,17 +223,17 @@ class _$ProtocolRecord extends ProtocolRecord {
 
   _$ProtocolRecord._(
       {this.user,
-      this.duration,
       this.goal1,
       this.goal2,
       this.goal3,
-      this.mindful,
       this.waiver1,
       this.waiver2,
       this.waiver3,
-      this.sleep,
       this.activityDays,
       this.createdAt,
+      this.sleepHours,
+      this.durationDays,
+      this.mindfulMinutes,
       this.ffRef})
       : super._();
 
@@ -251,17 +250,17 @@ class _$ProtocolRecord extends ProtocolRecord {
     if (identical(other, this)) return true;
     return other is ProtocolRecord &&
         user == other.user &&
-        duration == other.duration &&
         goal1 == other.goal1 &&
         goal2 == other.goal2 &&
         goal3 == other.goal3 &&
-        mindful == other.mindful &&
         waiver1 == other.waiver1 &&
         waiver2 == other.waiver2 &&
         waiver3 == other.waiver3 &&
-        sleep == other.sleep &&
         activityDays == other.activityDays &&
         createdAt == other.createdAt &&
+        sleepHours == other.sleepHours &&
+        durationDays == other.durationDays &&
+        mindfulMinutes == other.mindfulMinutes &&
         ffRef == other.ffRef;
   }
 
@@ -279,17 +278,17 @@ class _$ProtocolRecord extends ProtocolRecord {
                                         $jc(
                                             $jc(
                                                 $jc($jc(0, user.hashCode),
-                                                    duration.hashCode),
-                                                goal1.hashCode),
-                                            goal2.hashCode),
-                                        goal3.hashCode),
-                                    mindful.hashCode),
-                                waiver1.hashCode),
-                            waiver2.hashCode),
-                        waiver3.hashCode),
-                    sleep.hashCode),
-                activityDays.hashCode),
-            createdAt.hashCode),
+                                                    goal1.hashCode),
+                                                goal2.hashCode),
+                                            goal3.hashCode),
+                                        waiver1.hashCode),
+                                    waiver2.hashCode),
+                                waiver3.hashCode),
+                            activityDays.hashCode),
+                        createdAt.hashCode),
+                    sleepHours.hashCode),
+                durationDays.hashCode),
+            mindfulMinutes.hashCode),
         ffRef.hashCode));
   }
 
@@ -297,17 +296,17 @@ class _$ProtocolRecord extends ProtocolRecord {
   String toString() {
     return (newBuiltValueToStringHelper(r'ProtocolRecord')
           ..add('user', user)
-          ..add('duration', duration)
           ..add('goal1', goal1)
           ..add('goal2', goal2)
           ..add('goal3', goal3)
-          ..add('mindful', mindful)
           ..add('waiver1', waiver1)
           ..add('waiver2', waiver2)
           ..add('waiver3', waiver3)
-          ..add('sleep', sleep)
           ..add('activityDays', activityDays)
           ..add('createdAt', createdAt)
+          ..add('sleepHours', sleepHours)
+          ..add('durationDays', durationDays)
+          ..add('mindfulMinutes', mindfulMinutes)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -321,10 +320,6 @@ class ProtocolRecordBuilder
   DocumentReference<Object?>? get user => _$this._user;
   set user(DocumentReference<Object?>? user) => _$this._user = user;
 
-  String? _duration;
-  String? get duration => _$this._duration;
-  set duration(String? duration) => _$this._duration = duration;
-
   String? _goal1;
   String? get goal1 => _$this._goal1;
   set goal1(String? goal1) => _$this._goal1 = goal1;
@@ -336,10 +331,6 @@ class ProtocolRecordBuilder
   String? _goal3;
   String? get goal3 => _$this._goal3;
   set goal3(String? goal3) => _$this._goal3 = goal3;
-
-  String? _mindful;
-  String? get mindful => _$this._mindful;
-  set mindful(String? mindful) => _$this._mindful = mindful;
 
   String? _waiver1;
   String? get waiver1 => _$this._waiver1;
@@ -353,10 +344,6 @@ class ProtocolRecordBuilder
   String? get waiver3 => _$this._waiver3;
   set waiver3(String? waiver3) => _$this._waiver3 = waiver3;
 
-  String? _sleep;
-  String? get sleep => _$this._sleep;
-  set sleep(String? sleep) => _$this._sleep = sleep;
-
   int? _activityDays;
   int? get activityDays => _$this._activityDays;
   set activityDays(int? activityDays) => _$this._activityDays = activityDays;
@@ -364,6 +351,19 @@ class ProtocolRecordBuilder
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
+  int? _sleepHours;
+  int? get sleepHours => _$this._sleepHours;
+  set sleepHours(int? sleepHours) => _$this._sleepHours = sleepHours;
+
+  String? _durationDays;
+  String? get durationDays => _$this._durationDays;
+  set durationDays(String? durationDays) => _$this._durationDays = durationDays;
+
+  String? _mindfulMinutes;
+  String? get mindfulMinutes => _$this._mindfulMinutes;
+  set mindfulMinutes(String? mindfulMinutes) =>
+      _$this._mindfulMinutes = mindfulMinutes;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -377,17 +377,17 @@ class ProtocolRecordBuilder
     final $v = _$v;
     if ($v != null) {
       _user = $v.user;
-      _duration = $v.duration;
       _goal1 = $v.goal1;
       _goal2 = $v.goal2;
       _goal3 = $v.goal3;
-      _mindful = $v.mindful;
       _waiver1 = $v.waiver1;
       _waiver2 = $v.waiver2;
       _waiver3 = $v.waiver3;
-      _sleep = $v.sleep;
       _activityDays = $v.activityDays;
       _createdAt = $v.createdAt;
+      _sleepHours = $v.sleepHours;
+      _durationDays = $v.durationDays;
+      _mindfulMinutes = $v.mindfulMinutes;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -412,17 +412,17 @@ class ProtocolRecordBuilder
     final _$result = _$v ??
         new _$ProtocolRecord._(
             user: user,
-            duration: duration,
             goal1: goal1,
             goal2: goal2,
             goal3: goal3,
-            mindful: mindful,
             waiver1: waiver1,
             waiver2: waiver2,
             waiver3: waiver3,
-            sleep: sleep,
             activityDays: activityDays,
             createdAt: createdAt,
+            sleepHours: sleepHours,
+            durationDays: durationDays,
+            mindfulMinutes: mindfulMinutes,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

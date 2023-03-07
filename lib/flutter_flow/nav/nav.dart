@@ -296,13 +296,13 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 35.0,
-                    height: 35.0,
-                    child: SpinKitRing(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                      size: 35.0,
+              ? Container(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/Monkk_-_Logo_long_-_no_border.png',
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )

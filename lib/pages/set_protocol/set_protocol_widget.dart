@@ -32,12 +32,12 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
     super.initState();
     _model = createModel(context, () => SetProtocolModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textController2 ??= TextEditingController();
-    _model.textController3 ??= TextEditingController();
-    _model.textController4 ??= TextEditingController();
-    _model.textController5 ??= TextEditingController();
-    _model.textController6 ??= TextEditingController();
+    _model.textFieldGoal1Controller ??= TextEditingController();
+    _model.textFieldGoal2Controller ??= TextEditingController();
+    _model.textFieldGoal3Controller ??= TextEditingController();
+    _model.textFieldWaiver1Controller ??= TextEditingController();
+    _model.textFieldWaiver2Controller ??= TextEditingController();
+    _model.textFieldWaiver3Controller ??= TextEditingController();
   }
 
   @override
@@ -122,12 +122,12 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                           Expanded(
                             child: FlutterFlowChoiceChips(
                               options: [
-                                ChipData('  30 Days  '),
-                                ChipData('  60 Days  '),
-                                ChipData('  90 Days  ')
+                                ChipData('30'),
+                                ChipData('60'),
+                                ChipData('90')
                               ],
-                              onChanged: (val) => setState(
-                                  () => _model.choiceChipsValue1 = val?.first),
+                              onChanged: (val) => setState(() =>
+                                  _model.choiceChipsDurationValue = val?.first),
                               selectedChipStyle: ChipStyle(
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primaryColor,
@@ -140,7 +140,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    6.0, 6.0, 6.0, 6.0),
+                                    26.0, 6.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               unselectedChipStyle: ChipStyle(
@@ -150,7 +150,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    6.0, 6.0, 6.0, 6.0),
+                                    26.0, 6.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               chipSpacing: 14.0,
@@ -216,7 +216,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    controller: _model.textController1,
+                                    controller: _model.textFieldGoal1Controller,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Goal #1',
@@ -271,7 +271,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
-                                    validator: _model.textController1Validator
+                                    validator: _model
+                                        .textFieldGoal1ControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -286,7 +287,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    controller: _model.textController2,
+                                    controller: _model.textFieldGoal2Controller,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Goal #2',
@@ -345,7 +346,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
-                                    validator: _model.textController2Validator
+                                    validator: _model
+                                        .textFieldGoal2ControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -357,7 +359,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                             children: [
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController3,
+                                  controller: _model.textFieldGoal3Controller,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Goal #3',
@@ -412,7 +414,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                   ),
                                   style: FlutterFlowTheme.of(context).title3,
                                   maxLines: null,
-                                  validator: _model.textController3Validator
+                                  validator: _model
+                                      .textFieldGoal3ControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -501,9 +504,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 count.toString(),
                                 style: FlutterFlowTheme.of(context).title3,
                               ),
-                              count: _model.countControllerValue ??= 0,
-                              updateCount: (count) => setState(
-                                  () => _model.countControllerValue = count),
+                              count: _model.countControllerActivityValue ??= 0,
+                              updateCount: (count) => setState(() =>
+                                  _model.countControllerActivityValue = count),
                               stepSize: 1,
                               minimum: 0,
                               maximum: 7,
@@ -562,15 +565,16 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                           Expanded(
                             child: FlutterFlowChoiceChips(
                               options: [
-                                ChipData('  0 Min  '),
-                                ChipData('  5 - 10 Min  '),
-                                ChipData('  10 - 20 Min  '),
-                                ChipData('  20 - 40 Min  '),
-                                ChipData('  40 - 60 Min  '),
-                                ChipData('  > 60 Min  ')
+                                ChipData('0'),
+                                ChipData('5'),
+                                ChipData('10'),
+                                ChipData('20'),
+                                ChipData('30'),
+                                ChipData('60'),
+                                ChipData('90')
                               ],
-                              onChanged: (val) => setState(
-                                  () => _model.choiceChipsValue2 = val?.first),
+                              onChanged: (val) => setState(() =>
+                                  _model.choiceChipsMindfulValue = val?.first),
                               selectedChipStyle: ChipStyle(
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primaryColor,
@@ -583,7 +587,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    6.0, 6.0, 6.0, 6.0),
+                                    26.0, 6.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               unselectedChipStyle: ChipStyle(
@@ -593,7 +597,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    6.0, 6.0, 6.0, 6.0),
+                                    26.0, 6.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               chipSpacing: 14.0,
@@ -660,7 +664,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    controller: _model.textController4,
+                                    controller:
+                                        _model.textFieldWaiver1Controller,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Waiver #1',
@@ -715,7 +720,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
-                                    validator: _model.textController4Validator
+                                    validator: _model
+                                        .textFieldWaiver1ControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -730,7 +736,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    controller: _model.textController5,
+                                    controller:
+                                        _model.textFieldWaiver2Controller,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Waiver #2',
@@ -785,7 +792,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
-                                    validator: _model.textController5Validator
+                                    validator: _model
+                                        .textFieldWaiver2ControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -797,7 +805,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                             children: [
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.textController6,
+                                  controller: _model.textFieldWaiver3Controller,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Waiver #3',
@@ -848,7 +856,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                   ),
                                   style: FlutterFlowTheme.of(context).title3,
                                   maxLines: null,
-                                  validator: _model.textController6Validator
+                                  validator: _model
+                                      .textFieldWaiver3ControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -908,47 +917,45 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Expanded(
-                            child: FlutterFlowChoiceChips(
-                              options: [
-                                ChipData('  4 - 5 Hrs  '),
-                                ChipData('  5 - 6 Hrs  '),
-                                ChipData('  6 - 7 Hrs  '),
-                                ChipData('  7 - 8 Hrs  '),
-                                ChipData('  8 - 9 Hrs  '),
-                                ChipData('  > 9 Hrs  ')
-                              ],
-                              onChanged: (val) => setState(
-                                  () => _model.choiceChipsValue3 = val?.first),
-                              selectedChipStyle: ChipStyle(
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .title3
-                                    .override(
-                                      fontFamily: 'Nunito',
-                                      color: Colors.white,
-                                    ),
-                                iconColor: Color(0x00000000),
-                                iconSize: 18.0,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    6.0, 6.0, 6.0, 6.0),
-                                elevation: 0.0,
-                              ),
-                              unselectedChipStyle: ChipStyle(
-                                backgroundColor: FlutterFlowTheme.of(context)
+                          Container(
+                            width: 160.0,
+                            height: 50.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(25.0),
+                              shape: BoxShape.rectangle,
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                textStyle: FlutterFlowTheme.of(context).title3,
-                                iconColor: Color(0x00000000),
-                                iconSize: 18.0,
-                                labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    6.0, 6.0, 6.0, 6.0),
-                                elevation: 0.0,
+                                width: 1.0,
                               ),
-                              chipSpacing: 14.0,
-                              rowSpacing: 14.0,
-                              multiselect: false,
-                              alignment: WrapAlignment.start,
+                            ),
+                            child: FlutterFlowCountController(
+                              decrementIconBuilder: (enabled) => FaIcon(
+                                FontAwesomeIcons.minus,
+                                color: enabled
+                                    ? FlutterFlowTheme.of(context).primaryColor
+                                    : Color(0xFFEEEEEE),
+                                size: 20.0,
+                              ),
+                              incrementIconBuilder: (enabled) => FaIcon(
+                                FontAwesomeIcons.plus,
+                                color: enabled
+                                    ? FlutterFlowTheme.of(context).primaryColor
+                                    : Color(0xFFEEEEEE),
+                                size: 20.0,
+                              ),
+                              countBuilder: (count) => Text(
+                                count.toString(),
+                                style: FlutterFlowTheme.of(context).title3,
+                              ),
+                              count: _model.countControllerSleepValue ??= 0,
+                              updateCount: (count) => setState(() =>
+                                  _model.countControllerSleepValue = count),
+                              stepSize: 1,
+                              minimum: 1,
+                              maximum: 12,
                             ),
                           ),
                         ],
@@ -968,16 +975,16 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                           final protocolCreateData = {
                             ...createProtocolRecordData(
                               user: currentUserReference,
-                              duration: _model.choiceChipsValue1,
-                              goal1: _model.textController1.text,
-                              goal2: _model.textController2.text,
-                              goal3: _model.textController3.text,
-                              mindful: _model.choiceChipsValue2,
-                              waiver1: _model.textController4.text,
-                              waiver2: _model.textController5.text,
-                              waiver3: _model.textController6.text,
-                              sleep: _model.choiceChipsValue3,
-                              activityDays: _model.countControllerValue,
+                              goal1: _model.textFieldGoal1Controller.text,
+                              goal2: _model.textFieldGoal2Controller.text,
+                              goal3: _model.textFieldGoal3Controller.text,
+                              waiver1: _model.textFieldWaiver1Controller.text,
+                              waiver2: _model.textFieldWaiver2Controller.text,
+                              waiver3: _model.textFieldWaiver3Controller.text,
+                              activityDays: _model.countControllerActivityValue,
+                              durationDays: _model.choiceChipsDurationValue,
+                              mindfulMinutes: _model.choiceChipsMindfulValue,
+                              sleepHours: _model.countControllerSleepValue,
                             ),
                             'created_at': FieldValue.serverTimestamp(),
                           };

@@ -146,9 +146,9 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 10.0, 10.0, 10.0),
+                                      26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.duration!,
+                                    columnProtocolRecord!.durationDays!,
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
@@ -508,7 +508,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 10.0, 10.0, 10.0),
+                                      26.0, 10.0, 26.0, 10.0),
                                   child: Text(
                                     columnProtocolRecord!.activityDays!
                                         .toString(),
@@ -575,9 +575,9 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 10.0, 10.0, 10.0),
+                                      26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.mindful!,
+                                    columnProtocolRecord!.mindfulMinutes!,
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
@@ -937,9 +937,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 10.0, 10.0, 10.0),
+                                      26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.sleep!,
+                                    columnProtocolRecord!.sleepHours!
+                                        .toString(),
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),

@@ -15,44 +15,44 @@ import 'package:provider/provider.dart';
 class SetProtocolModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue1;
-  // State field(s) for TextField widget.
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for CountController widget.
-  int? countControllerValue;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue2;
-  // State field(s) for TextField widget.
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue3;
+  // State field(s) for ChoiceChipsDuration widget.
+  String? choiceChipsDurationValue;
+  // State field(s) for TextFieldGoal1 widget.
+  TextEditingController? textFieldGoal1Controller;
+  String? Function(BuildContext, String?)? textFieldGoal1ControllerValidator;
+  // State field(s) for TextFieldGoal2 widget.
+  TextEditingController? textFieldGoal2Controller;
+  String? Function(BuildContext, String?)? textFieldGoal2ControllerValidator;
+  // State field(s) for TextFieldGoal3 widget.
+  TextEditingController? textFieldGoal3Controller;
+  String? Function(BuildContext, String?)? textFieldGoal3ControllerValidator;
+  // State field(s) for CountControllerActivity widget.
+  int? countControllerActivityValue;
+  // State field(s) for ChoiceChipsMindful widget.
+  String? choiceChipsMindfulValue;
+  // State field(s) for TextFieldWaiver1 widget.
+  TextEditingController? textFieldWaiver1Controller;
+  String? Function(BuildContext, String?)? textFieldWaiver1ControllerValidator;
+  // State field(s) for TextFieldWaiver2 widget.
+  TextEditingController? textFieldWaiver2Controller;
+  String? Function(BuildContext, String?)? textFieldWaiver2ControllerValidator;
+  // State field(s) for TextFieldWaiver3 widget.
+  TextEditingController? textFieldWaiver3Controller;
+  String? Function(BuildContext, String?)? textFieldWaiver3ControllerValidator;
+  // State field(s) for CountControllerSleep widget.
+  int? countControllerSleepValue;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
   void dispose() {
-    textController1?.dispose();
-    textController2?.dispose();
-    textController3?.dispose();
-    textController4?.dispose();
-    textController5?.dispose();
-    textController6?.dispose();
+    textFieldGoal1Controller?.dispose();
+    textFieldGoal2Controller?.dispose();
+    textFieldGoal3Controller?.dispose();
+    textFieldWaiver1Controller?.dispose();
+    textFieldWaiver2Controller?.dispose();
+    textFieldWaiver3Controller?.dispose();
   }
 
   /// Additional helper methods are added here.

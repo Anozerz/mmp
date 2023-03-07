@@ -60,9 +60,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.network(
-                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/template-screens-hpce0u/assets/xofl99y11az0/@3xlogo_primary_color_white.png',
-                      width: 240.0,
+                    Image.asset(
+                      'assets/images/Monkk_-_Logo_long_-_no_border.png',
+                      width: 220.0,
                       height: 60.0,
                       fit: BoxFit.fitWidth,
                     ),
