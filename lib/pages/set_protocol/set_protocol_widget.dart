@@ -540,7 +540,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Set your mindful minutes per week.',
+                        'Set your daily mindful minutes.',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyText1,
                       ),

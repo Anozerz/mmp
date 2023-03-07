@@ -148,7 +148,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.durationDays!,
+                                    valueOrDefault<String>(
+                                      columnProtocolRecord!.durationDays,
+                                      'not set',
+                                    ),
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
@@ -214,7 +217,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: TextFormField(
                                         controller: _model.textController1 ??=
                                             TextEditingController(
-                                          text: columnProtocolRecord!.goal1,
+                                          text: valueOrDefault<String>(
+                                            columnProtocolRecord!.goal1,
+                                            'not set',
+                                          ),
                                         ),
                                         readOnly: true,
                                         obscureText: false,
@@ -299,7 +305,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: TextFormField(
                                         controller: _model.textController2 ??=
                                             TextEditingController(
-                                          text: columnProtocolRecord!.goal2,
+                                          text: valueOrDefault<String>(
+                                            columnProtocolRecord!.goal2,
+                                            'not set',
+                                          ),
                                         ),
                                         readOnly: true,
                                         obscureText: false,
@@ -381,7 +390,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                     child: TextFormField(
                                       controller: _model.textController3 ??=
                                           TextEditingController(
-                                        text: columnProtocolRecord!.goal3,
+                                        text: valueOrDefault<String>(
+                                          columnProtocolRecord!.goal3,
+                                          'not set',
+                                        ),
                                       ),
                                       readOnly: true,
                                       obscureText: false,
@@ -510,8 +522,11 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.activityDays!
-                                        .toString(),
+                                    valueOrDefault<String>(
+                                      columnProtocolRecord!.activityDays
+                                          ?.toString(),
+                                      'not set',
+                                    ),
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
@@ -545,7 +560,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            'Your mindfulness minutes per week.',
+                            'Your daily mindful minutes.',
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),
@@ -577,7 +592,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.mindfulMinutes!,
+                                    valueOrDefault<String>(
+                                      columnProtocolRecord!.mindfulMinutes,
+                                      'not set',
+                                    ),
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
@@ -643,7 +661,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: TextFormField(
                                         controller: _model.textController4 ??=
                                             TextEditingController(
-                                          text: columnProtocolRecord!.waiver1,
+                                          text: valueOrDefault<String>(
+                                            columnProtocolRecord!.waiver1,
+                                            'not set',
+                                          ),
                                         ),
                                         readOnly: true,
                                         obscureText: false,
@@ -728,7 +749,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: TextFormField(
                                         controller: _model.textController5 ??=
                                             TextEditingController(
-                                          text: columnProtocolRecord!.waiver2,
+                                          text: valueOrDefault<String>(
+                                            columnProtocolRecord!.waiver2,
+                                            'not set',
+                                          ),
                                         ),
                                         readOnly: true,
                                         obscureText: false,
@@ -810,7 +834,10 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                     child: TextFormField(
                                       controller: _model.textController6 ??=
                                           TextEditingController(
-                                        text: columnProtocolRecord!.waiver3,
+                                        text: valueOrDefault<String>(
+                                          columnProtocolRecord!.waiver3,
+                                          'not set',
+                                        ),
                                       ),
                                       readOnly: true,
                                       obscureText: false,
@@ -939,8 +966,11 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       26.0, 10.0, 26.0, 10.0),
                                   child: Text(
-                                    columnProtocolRecord!.sleepHours!
-                                        .toString(),
+                                    valueOrDefault<String>(
+                                      columnProtocolRecord!.sleepHours
+                                          ?.toString(),
+                                      'not set',
+                                    ),
                                     style: FlutterFlowTheme.of(context).title3,
                                   ),
                                 ),
