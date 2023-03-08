@@ -39,6 +39,7 @@ dependencies:
   firebase_core_platform_interface: 4.5.2
   firebase_core_web: 2.0.2
   fl_chart: 0.55.0
+  floating_bottom_navigation_bar: 1.5.2
   flutter_animate: 1.0.0
   flutter_cache_manager: 3.3.0
   flutter_spinkit: 5.1.0
@@ -109,6 +110,10 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
 
+  fonts:
+    - family: Mmp1
+      fonts:
+        - asset: assets/fonts/mmp1.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

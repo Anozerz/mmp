@@ -108,7 +108,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         20.0, 20.0, 20.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.emailAddressController,
-                                      autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Email Address',
@@ -486,7 +485,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     child: TextFormField(
                                       controller:
                                           _model.emailAddressCreateController,
-                                      autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Email Address',

@@ -1015,8 +1015,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
-                                transitionType: PageTransitionType.bottomToTop,
-                                duration: Duration(milliseconds: 140),
+                                transitionType: PageTransitionType.rightToLeft,
+                                duration: Duration(milliseconds: 360),
                               ),
                             },
                           );
