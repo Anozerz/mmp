@@ -140,7 +140,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    26.0, 6.0, 26.0, 6.0),
+                                    26.0, 5.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               unselectedChipStyle: ChipStyle(
@@ -150,7 +150,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    26.0, 6.0, 26.0, 6.0),
+                                    26.0, 5.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               chipSpacing: 14.0,
@@ -481,8 +481,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Container(
-                            width: 160.0,
-                            height: 50.0,
+                            width: 180.0,
+                            height: 55.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -500,14 +500,14 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 color: enabled
                                     ? FlutterFlowTheme.of(context).primaryColor
                                     : Color(0xFFEEEEEE),
-                                size: 20.0,
+                                size: 22.0,
                               ),
                               incrementIconBuilder: (enabled) => FaIcon(
                                 FontAwesomeIcons.plus,
                                 color: enabled
                                     ? FlutterFlowTheme.of(context).primaryColor
                                     : Color(0xFFEEEEEE),
-                                size: 20.0,
+                                size: 22.0,
                               ),
                               countBuilder: (count) => Text(
                                 count.toString(),
@@ -936,8 +936,8 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Container(
-                            width: 160.0,
-                            height: 50.0,
+                            width: 180.0,
+                            height: 55.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -955,14 +955,14 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 color: enabled
                                     ? FlutterFlowTheme.of(context).primaryColor
                                     : Color(0xFFEEEEEE),
-                                size: 20.0,
+                                size: 22.0,
                               ),
                               incrementIconBuilder: (enabled) => FaIcon(
                                 FontAwesomeIcons.plus,
                                 color: enabled
                                     ? FlutterFlowTheme.of(context).primaryColor
                                     : Color(0xFFEEEEEE),
-                                size: 20.0,
+                                size: 22.0,
                               ),
                               countBuilder: (count) => Text(
                                 count.toString(),
