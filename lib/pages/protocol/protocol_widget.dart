@@ -1104,7 +1104,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 30.0, 16.0, 40.0),
+                                40.0, 40.0, 40.0, 40.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -1159,7 +1159,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'SLEEP',
+                                    'SETUP',
                                     style: FlutterFlowTheme.of(context)
                                         .title2
                                         .override(
@@ -1178,7 +1178,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Your hours of sleep per night.',
+                                    'Start setting up your protocol.',
                                     textAlign: TextAlign.center,
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,

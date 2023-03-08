@@ -88,10 +88,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'SetProtocol',
               path: 'setProtocol',
-              builder: (context, params) => NavBarPage(
-                initialPage: '',
-                page: SetProtocolWidget(),
-              ),
+              builder: (context, params) => SetProtocolWidget(),
             ),
             FFRoute(
               name: 'Protocol',
