@@ -845,7 +845,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (columnProtocolRecord!.waiver1 !=
+                                  if (columnProtocolRecord!.waiver3 !=
                                       'not set')
                                     Expanded(
                                       child: TextFormField(

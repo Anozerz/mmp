@@ -596,7 +596,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    26.0, 6.0, 26.0, 6.0),
+                                    26.0, 5.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               unselectedChipStyle: ChipStyle(
@@ -606,7 +606,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                 iconColor: Color(0x00000000),
                                 iconSize: 18.0,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
-                                    26.0, 6.0, 26.0, 6.0),
+                                    26.0, 5.0, 26.0, 6.0),
                                 elevation: 0.0,
                               ),
                               chipSpacing: 14.0,
