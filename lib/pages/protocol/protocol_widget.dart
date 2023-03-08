@@ -666,88 +666,91 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Expanded(
-                                      child: TextFormField(
-                                        controller: _model.textController4 ??=
-                                            TextEditingController(
-                                          text: valueOrDefault<String>(
-                                            columnProtocolRecord!.waiver1,
-                                            'not set',
+                                    if (columnProtocolRecord!.waiver1 ==
+                                        'not set')
+                                      Expanded(
+                                        child: TextFormField(
+                                          controller: _model.textController4 ??=
+                                              TextEditingController(
+                                            text: valueOrDefault<String>(
+                                              columnProtocolRecord!.waiver1,
+                                              'not set',
+                                            ),
                                           ),
-                                        ),
-                                        readOnly: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'Waiver #1',
-                                          labelStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Nunito',
+                                          readOnly: true,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelText: 'Waiver #1',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Nunito',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryColor,
+                                                      fontSize: 16.0,
+                                                    ),
+                                            hintText: 'Not set',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText2
+                                                    .override(
+                                                      fontFamily: 'Mulish',
+                                                      fontSize: 16.0,
+                                                    ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryColor,
-                                                fontSize: 16.0,
+                                                        .secondaryBackground,
+                                                width: 1.0,
                                               ),
-                                          hintText: 'Not set',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Mulish',
-                                                    fontSize: 16.0,
-                                                  ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              width: 1.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFFF94C39),
-                                              width: 1.0,
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0xFFF94C39),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFFF94C39),
-                                              width: 1.0,
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0xFFF94C39),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            contentPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 22.0, 20.0, 22.0),
                                           ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 22.0, 20.0, 22.0),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title3,
+                                          maxLines: null,
+                                          validator: _model
+                                              .textController4Validator
+                                              .asValidator(context),
                                         ),
-                                        style:
-                                            FlutterFlowTheme.of(context).title3,
-                                        maxLines: null,
-                                        validator: _model
-                                            .textController4Validator
-                                            .asValidator(context),
                                       ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -757,88 +760,91 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Expanded(
-                                      child: TextFormField(
-                                        controller: _model.textController5 ??=
-                                            TextEditingController(
-                                          text: valueOrDefault<String>(
-                                            columnProtocolRecord!.waiver2,
-                                            'not set',
+                                    if (columnProtocolRecord!.waiver2 ==
+                                        'not set')
+                                      Expanded(
+                                        child: TextFormField(
+                                          controller: _model.textController5 ??=
+                                              TextEditingController(
+                                            text: valueOrDefault<String>(
+                                              columnProtocolRecord!.waiver2,
+                                              'not set',
+                                            ),
                                           ),
-                                        ),
-                                        readOnly: true,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelText: 'Waiver #2',
-                                          labelStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Nunito',
+                                          readOnly: true,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelText: 'Waiver #2',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Nunito',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryColor,
+                                                      fontSize: 16.0,
+                                                    ),
+                                            hintText: 'Not set',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText2
+                                                    .override(
+                                                      fontFamily: 'Mulish',
+                                                      fontSize: 16.0,
+                                                    ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryColor,
-                                                fontSize: 16.0,
+                                                        .secondaryBackground,
+                                                width: 1.0,
                                               ),
-                                          hintText: 'Not set',
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyText2
-                                                  .override(
-                                                    fontFamily: 'Mulish',
-                                                    fontSize: 16.0,
-                                                  ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              width: 1.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 1.0,
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFFF94C39),
-                                              width: 1.0,
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0xFFF94C39),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0xFFF94C39),
-                                              width: 1.0,
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color(0xFFF94C39),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            contentPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 22.0, 20.0, 22.0),
                                           ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 22.0, 20.0, 22.0),
+                                          style: FlutterFlowTheme.of(context)
+                                              .title3,
+                                          maxLines: null,
+                                          validator: _model
+                                              .textController5Validator
+                                              .asValidator(context),
                                         ),
-                                        style:
-                                            FlutterFlowTheme.of(context).title3,
-                                        maxLines: null,
-                                        validator: _model
-                                            .textController5Validator
-                                            .asValidator(context),
                                       ),
-                                    ),
                                   ],
                                 ),
                               ),
