@@ -268,6 +268,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 22.0, 20.0, 22.0),
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
@@ -343,6 +346,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 22.0, 20.0, 22.0),
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
@@ -411,6 +417,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 22.0, 20.0, 22.0),
                                   ),
                                   style: FlutterFlowTheme.of(context).title3,
                                   maxLines: null,
@@ -717,6 +726,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 22.0, 20.0, 22.0),
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
@@ -789,6 +801,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
+                                      contentPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 22.0, 20.0, 22.0),
                                     ),
                                     style: FlutterFlowTheme.of(context).title3,
                                     maxLines: null,
@@ -853,6 +868,9 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 22.0, 20.0, 22.0),
                                   ),
                                   style: FlutterFlowTheme.of(context).title3,
                                   maxLines: null,
@@ -1006,7 +1024,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                         text: 'Log your protocol',
                         options: FFButtonOptions(
                           width: 300.0,
-                          height: 50.0,
+                          height: 55.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
