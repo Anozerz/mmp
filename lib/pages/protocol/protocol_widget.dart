@@ -845,10 +845,8 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (valueOrDefault<bool>(
-                                    columnProtocolRecord!.waiver3 != 'not set',
-                                    true,
-                                  ))
+                                  if (columnProtocolRecord!.waiver3 != null &&
+                                      columnProtocolRecord!.waiver3 != '')
                                     Expanded(
                                       child: TextFormField(
                                         controller: _model.textController6 ??=
