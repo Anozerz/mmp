@@ -88,13 +88,12 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
           body: SafeArea(
             child: GestureDetector(
               onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-              child: Visibility(
-                visible: protocolProtocolRecord!.durationDays != null &&
-                    protocolProtocolRecord!.durationDays != '',
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    if (protocolProtocolRecord!.durationDays != null &&
+                        protocolProtocolRecord!.durationDays != '')
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1146,97 +1145,96 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                           ),
                         ],
                       ),
-                      if (protocolProtocolRecord!.durationDays == null ||
-                          protocolProtocolRecord!.durationDays == '')
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  32.0, 30.0, 16.0, 8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    'SETUP',
-                                    style: FlutterFlowTheme.of(context)
-                                        .title2
-                                        .override(
-                                          fontFamily: 'Mulish',
-                                          letterSpacing: 2.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  32.0, 0.0, 0.0, 5.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Start setting up your protocol.',
-                                    textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyText1,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 30.0, 16.0, 40.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () async {
-                                      // Open SetProtocol
-
-                                      context.pushNamed(
-                                        'SetProtocol',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.rightToLeft,
-                                            duration:
-                                                Duration(milliseconds: 360),
-                                          ),
-                                        },
-                                      );
-                                    },
-                                    text: 'Set your protocol',
-                                    options: FFButtonOptions(
-                                      width: 300.0,
-                                      height: 55.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .subtitle2,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                    if (valueOrDefault<bool>(
+                      protocolProtocolRecord!.durationDays == null ||
+                          protocolProtocolRecord!.durationDays == '',
+                      true,
+                    ))
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                32.0, 30.0, 16.0, 8.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Text(
+                                  'SETUP',
+                                  style: FlutterFlowTheme.of(context)
+                                      .title2
+                                      .override(
+                                        fontFamily: 'Mulish',
+                                        letterSpacing: 2.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                    ],
-                  ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                32.0, 0.0, 0.0, 5.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Start setting up your protocol.',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 30.0, 16.0, 40.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    // Open SetProtocol
+
+                                    context.pushNamed(
+                                      'SetProtocol',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 360),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: 'Set your protocol',
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 55.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    textStyle:
+                                        FlutterFlowTheme.of(context).subtitle2,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                  ],
                 ),
               ),
             ),
