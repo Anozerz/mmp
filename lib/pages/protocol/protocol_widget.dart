@@ -1145,11 +1145,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                           ),
                         ],
                       ),
-                    if (valueOrDefault<bool>(
-                      protocolProtocolRecord!.waiver3 == null ||
-                          protocolProtocolRecord!.waiver3 == '',
-                      true,
-                    ))
+                    if ((protocolProtocolRecord != null) == null)
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
