@@ -1146,8 +1146,8 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                         ],
                       ),
                     if (valueOrDefault<bool>(
-                      protocolProtocolRecord!.durationDays == null ||
-                          protocolProtocolRecord!.durationDays == '',
+                      protocolProtocolRecord!.waiver3 == null ||
+                          protocolProtocolRecord!.waiver3 == '',
                       true,
                     ))
                       Column(
