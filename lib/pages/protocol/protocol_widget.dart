@@ -92,8 +92,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (protocolProtocolRecord!.durationDays != null &&
-                        protocolProtocolRecord!.durationDays != '')
+                    if ((protocolProtocolRecord != null) != null)
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
