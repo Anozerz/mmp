@@ -69,7 +69,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'MORNING',
+                        'MORNINGG',
                         style: FlutterFlowTheme.of(context).title2.override(
                               fontFamily: 'Mulish',
                               letterSpacing: 2.0,
