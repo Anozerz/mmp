@@ -67,7 +67,7 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Lottie.asset(
-                        'assets/lottie_animations/94888-confetti02-optimized.json',
+                        'assets/lottie_animations/29344-confetti-heart-optimized.json',
                         width: 75.0,
                         height: 75.0,
                         fit: BoxFit.cover,
