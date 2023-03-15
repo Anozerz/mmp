@@ -123,9 +123,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'HomePage': HomePageWidget(),
-      'Protocol': ProtocolWidget(),
       'Stats': StatsWidget(),
       'Journey': JourneyWidget(),
+      'Protocol': ProtocolWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
     return Scaffold(
@@ -153,14 +153,6 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              FFIcons.kfile,
-              size: 28.0,
-            ),
-            label: 'Protocol',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               FFIcons.kpieChart,
               size: 28.0,
             ),
@@ -173,6 +165,14 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 28.0,
             ),
             label: 'Journey',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              FFIcons.kfile,
+              size: 28.0,
+            ),
+            label: 'Protocol',
             tooltip: '',
           )
         ],
