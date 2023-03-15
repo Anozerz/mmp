@@ -163,7 +163,7 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
                                         },
                                       );
                                     },
-                                    text: 'View Protocol',
+                                    text: 'View Protocoll',
                                     options: FFButtonOptions(
                                       width: 300.0,
                                       height: 50.0,
