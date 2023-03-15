@@ -40,59 +40,55 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<List<ProtocolRecord>>(
-      stream: queryProtocolRecord(
-        queryBuilder: (protocolRecord) =>
-            protocolRecord.where('user', isEqualTo: currentUserReference),
-        singleRecord: true,
-      ),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(
-              width: 35.0,
-              height: 35.0,
-              child: SpinKitRing(
-                color: FlutterFlowTheme.of(context).primaryColor,
-                size: 35.0,
-              ),
-            ),
-          );
-        }
-        List<ProtocolRecord> protocolProtocolRecordList = snapshot.data!;
-        // Return an empty Container when the item does not exist.
-        if (snapshot.data!.isEmpty) {
-          return Container();
-        }
-        final protocolProtocolRecord = protocolProtocolRecordList.isNotEmpty
-            ? protocolProtocolRecordList.first
-            : null;
-        return Scaffold(
-          key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            automaticallyImplyLeading: false,
-            title: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
-              child: Text(
-                '📝 Your Protocol',
-                style: FlutterFlowTheme.of(context).title1,
-              ),
-            ),
-            actions: [],
-            centerTitle: false,
-            elevation: 0.0,
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        automaticallyImplyLeading: false,
+        title: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+          child: Text(
+            '📝 Your Protocol',
+            style: FlutterFlowTheme.of(context).title1,
           ),
-          body: SafeArea(
-            child: GestureDetector(
-              onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-              child: SingleChildScrollView(
+        ),
+        actions: [],
+        centerTitle: false,
+        elevation: 0.0,
+      ),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          child: StreamBuilder<List<ProtocolRecord>>(
+            stream: queryProtocolRecord(
+              queryBuilder: (protocolRecord) =>
+                  protocolRecord.where('user', isEqualTo: currentUserReference),
+              singleRecord: true,
+            ),
+            builder: (context, snapshot) {
+              // Customize what your widget looks like when it's loading.
+              if (!snapshot.hasData) {
+                return Center(
+                  child: SizedBox(
+                    width: 35.0,
+                    height: 35.0,
+                    child: SpinKitRing(
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                      size: 35.0,
+                    ),
+                  ),
+                );
+              }
+              List<ProtocolRecord> columnProtocolRecordList = snapshot.data!;
+              final columnProtocolRecord = columnProtocolRecordList.isNotEmpty
+                  ? columnProtocolRecordList.first
+                  : null;
+              return SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if ((protocolProtocolRecord != null) != null)
+                    if (columnProtocolRecord != null)
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -121,10 +117,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Your time period.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Your time period.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -155,7 +154,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             26.0, 10.0, 26.0, 10.0),
                                         child: Text(
-                                          protocolProtocolRecord!.durationDays!,
+                                          '${columnProtocolRecord!.durationDays} days',
                                           style: FlutterFlowTheme.of(context)
                                               .title3,
                                         ),
@@ -191,10 +190,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Your goals.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Your goals.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -220,16 +222,15 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          if (protocolProtocolRecord!.goal1 !=
+                                          if (columnProtocolRecord!.goal1 !=
                                                   null &&
-                                              protocolProtocolRecord!.goal1 !=
-                                                  '')
+                                              columnProtocolRecord!.goal1 != '')
                                             Expanded(
                                               child: TextFormField(
                                                 controller:
                                                     _model.textController1 ??=
                                                         TextEditingController(
-                                                  text: protocolProtocolRecord!
+                                                  text: columnProtocolRecord!
                                                       .goal1,
                                                 ),
                                                 readOnly: true,
@@ -325,16 +326,15 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          if (protocolProtocolRecord!.goal2 !=
+                                          if (columnProtocolRecord!.goal2 !=
                                                   null &&
-                                              protocolProtocolRecord!.goal2 !=
-                                                  '')
+                                              columnProtocolRecord!.goal2 != '')
                                             Expanded(
                                               child: TextFormField(
                                                 controller:
                                                     _model.textController2 ??=
                                                         TextEditingController(
-                                                  text: protocolProtocolRecord!
+                                                  text: columnProtocolRecord!
                                                       .goal2,
                                                 ),
                                                 readOnly: true,
@@ -427,16 +427,16 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        if (protocolProtocolRecord!.goal3 !=
+                                        if (columnProtocolRecord!.goal3 !=
                                                 null &&
-                                            protocolProtocolRecord!.goal3 != '')
+                                            columnProtocolRecord!.goal3 != '')
                                           Expanded(
                                             child: TextFormField(
                                               controller:
                                                   _model.textController3 ??=
                                                       TextEditingController(
-                                                text: protocolProtocolRecord!
-                                                    .goal3,
+                                                text:
+                                                    columnProtocolRecord!.goal3,
                                               ),
                                               readOnly: true,
                                               obscureText: false,
@@ -551,10 +551,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Your training days per week.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Your training days per week.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -585,8 +588,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             26.0, 10.0, 26.0, 10.0),
                                         child: Text(
-                                          protocolProtocolRecord!.activityDays!
-                                              .toString(),
+                                          '${columnProtocolRecord!.activityDays?.toString()} days',
                                           style: FlutterFlowTheme.of(context)
                                               .title3,
                                         ),
@@ -622,10 +624,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Your daily mindful minutes.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Your daily mindful minutes.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -656,8 +661,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             26.0, 10.0, 26.0, 10.0),
                                         child: Text(
-                                          protocolProtocolRecord!
-                                              .mindfulMinutes!,
+                                          '${columnProtocolRecord!.mindfulMinutes} minutes',
                                           style: FlutterFlowTheme.of(context)
                                               .title3,
                                         ),
@@ -693,10 +697,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Your strict waivers.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Your strict waivers.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -722,16 +729,16 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          if (protocolProtocolRecord!.waiver1 !=
+                                          if (columnProtocolRecord!.waiver1 !=
                                                   null &&
-                                              protocolProtocolRecord!.waiver1 !=
+                                              columnProtocolRecord!.waiver1 !=
                                                   '')
                                             Expanded(
                                               child: TextFormField(
                                                 controller:
                                                     _model.textController4 ??=
                                                         TextEditingController(
-                                                  text: protocolProtocolRecord!
+                                                  text: columnProtocolRecord!
                                                       .waiver1,
                                                 ),
                                                 readOnly: true,
@@ -827,16 +834,16 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          if (protocolProtocolRecord!.waiver2 !=
+                                          if (columnProtocolRecord!.waiver2 !=
                                                   null &&
-                                              protocolProtocolRecord!.waiver2 !=
+                                              columnProtocolRecord!.waiver2 !=
                                                   '')
                                             Expanded(
                                               child: TextFormField(
                                                 controller:
                                                     _model.textController5 ??=
                                                         TextEditingController(
-                                                  text: protocolProtocolRecord!
+                                                  text: columnProtocolRecord!
                                                       .waiver2,
                                                 ),
                                                 readOnly: true,
@@ -929,16 +936,15 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        if (protocolProtocolRecord!.waiver3 !=
+                                        if (columnProtocolRecord!.waiver3 !=
                                                 null &&
-                                            protocolProtocolRecord!.waiver3 !=
-                                                '')
+                                            columnProtocolRecord!.waiver3 != '')
                                           Expanded(
                                             child: TextFormField(
                                               controller:
                                                   _model.textController6 ??=
                                                       TextEditingController(
-                                                text: protocolProtocolRecord!
+                                                text: columnProtocolRecord!
                                                     .waiver3,
                                               ),
                                               readOnly: true,
@@ -1054,10 +1060,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Your hours of sleep per night.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Your hours of sleep per night.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -1088,8 +1097,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             26.0, 10.0, 26.0, 10.0),
                                         child: Text(
-                                          protocolProtocolRecord!.sleepHours!
-                                              .toString(),
+                                          '${columnProtocolRecord!.sleepHours?.toString()} hours',
                                           style: FlutterFlowTheme.of(context)
                                               .title3,
                                         ),
@@ -1108,12 +1116,24 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'ProtocolSuccess',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: 'Adjust',
                                   icon: FaIcon(
                                     FontAwesomeIcons.pencilAlt,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     size: 14.0,
                                   ),
                                   options: FFButtonOptions(
@@ -1144,7 +1164,7 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                           ),
                         ],
                       ),
-                    if ((protocolProtocolRecord != null) == null)
+                    if (!(columnProtocolRecord != null))
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -1174,10 +1194,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Start setting up your protocol.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Start setting up your protocol.',
+                                    textAlign: TextAlign.start,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -1194,13 +1217,13 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                                     // Open SetProtocol
 
                                     context.pushNamed(
-                                      'SetProtocol',
+                                      'ProtocolSuccess',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 360),
+                                              PageTransitionType.leftToRight,
+                                          duration: Duration(milliseconds: 240),
                                         ),
                                       },
                                     );
@@ -1231,11 +1254,11 @@ class _ProtocolWidgetState extends State<ProtocolWidget> {
                       ),
                   ],
                 ),
-              ),
-            ),
+              );
+            },
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

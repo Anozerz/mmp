@@ -111,14 +111,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
             ),
             FFRoute(
+              name: 'Login',
+              path: 'login',
+              builder: (context, params) => LoginWidget(),
+            ),
+            FFRoute(
+              name: 'Journey',
+              path: 'journey',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'Journey')
+                  : JourneyWidget(),
+            ),
+            FFRoute(
+              name: 'JournalPage1',
+              path: 'journalPage1',
+              builder: (context, params) => JournalPage1Widget(),
+            ),
+            FFRoute(
+              name: 'JournalPage2',
+              path: 'journalPage2',
+              builder: (context, params) => JournalPage2Widget(),
+            ),
+            FFRoute(
+              name: 'JournalPage3',
+              path: 'journalPage3',
+              builder: (context, params) => JournalPage3Widget(),
+            ),
+            FFRoute(
               name: 'Onboarding',
               path: 'onboarding',
               builder: (context, params) => OnboardingWidget(),
             ),
             FFRoute(
-              name: 'Login',
-              path: 'login',
-              builder: (context, params) => LoginWidget(),
+              name: 'ProtocolSuccess',
+              path: 'protocolSuccess',
+              builder: (context, params) => ProtocolSuccessWidget(),
+            ),
+            FFRoute(
+              name: 'JournalSuccess',
+              path: 'journalSuccess',
+              builder: (context, params) => JournalSuccessWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -47,11 +47,37 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         title: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
           child: Text(
-            '👋 Hi, Sebastian',
+            '👋 Welcome',
             style: FlutterFlowTheme.of(context).title1,
           ),
         ),
-        actions: [],
+        actions: [
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 18.0, 0.0),
+            child: Icon(
+              FFIcons.kprofile,
+              color: FlutterFlowTheme.of(context).secondaryText,
+              size: 40.0,
+            ),
+          ),
+        ],
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(1.0),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Divider(
+                  height: 1.0,
+                  thickness: 1.0,
+                  color: Color(0x4C9F9F9F),
+                ),
+              ],
+            ),
+          ),
+        ),
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -69,7 +95,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'MORNINGG',
+                        'MORNING',
+                        textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).title2.override(
                               fontFamily: 'Mulish',
                               letterSpacing: 2.0,
@@ -115,10 +142,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Ready to boost your day and set focus?',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                Expanded(
+                                  child: Text(
+                                    'Ready to boost your day and set focus?',
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
+                                  ),
                                 ),
                               ],
                             ),
@@ -128,8 +158,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'JournalPage1',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.bottomToTop,
+                                        duration: Duration(milliseconds: 240),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: 'Let\'s start',
                                 options: FFButtonOptions(
@@ -165,6 +205,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     children: [
                       Text(
                         'INSPIRATION',
+                        textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).title2.override(
                               fontFamily: 'Mulish',
                               letterSpacing: 2.0,
@@ -211,17 +252,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        'The road to success\nand the road to failure are\nalmost exactly the same.',
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .subtitle1
-                                            .override(
-                                              fontFamily: 'Mulish',
-                                              color: Colors.white,
-                                              fontStyle: FontStyle.italic,
-                                              lineHeight: 1.4,
-                                            ),
+                                      Expanded(
+                                        child: Text(
+                                          'The road to success\nand the road to failure are\nalmost exactly the same.',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                                fontFamily: 'Mulish',
+                                                color: Colors.white,
+                                                fontStyle: FontStyle.italic,
+                                                lineHeight: 1.4,
+                                              ),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -230,11 +273,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      'Your daily motivational quote.',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
+                                    Expanded(
+                                      child: Text(
+                                        'Your daily motivational quote.',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -269,15 +314,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'All I need is within\nme right now.',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .subtitle1
-                                      .override(
-                                        fontFamily: 'Mulish',
-                                        lineHeight: 1.4,
-                                      ),
+                                Expanded(
+                                  child: Text(
+                                    'All I need is within\nme right now.',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .subtitle1
+                                        .override(
+                                          fontFamily: 'Mulish',
+                                          lineHeight: 1.4,
+                                        ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -286,10 +333,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                'Your weekly affirmation.',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyText1,
+                              Expanded(
+                                child: Text(
+                                  'Your weekly affirmation.',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                ),
                               ),
                             ],
                           ),

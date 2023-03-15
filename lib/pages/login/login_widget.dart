@@ -60,12 +60,20 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/images/Monkk_-_Logo_long_-_no_border.png',
-                      width: 220.0,
-                      height: 60.0,
-                      fit: BoxFit.fitWidth,
-                    ),
+                    if (Theme.of(context).brightness == Brightness.light)
+                      Image.asset(
+                        'assets/images/Monkk_-_Logo_long_-_no_border.png',
+                        width: 220.0,
+                        height: 60.0,
+                        fit: BoxFit.fitWidth,
+                      ),
+                    if (Theme.of(context).brightness == Brightness.dark)
+                      Image.asset(
+                        'assets/images/Monkk_-_Logo_long_-_no_border_-_light.png',
+                        width: 220.0,
+                        height: 60.0,
+                        fit: BoxFit.fitWidth,
+                      ),
                   ],
                 ),
               ),

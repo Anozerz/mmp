@@ -45,9 +45,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
-        title: Text(
-          '👋 Welcome',
-          style: FlutterFlowTheme.of(context).title1,
+        title: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 0.0, 0.0),
+          child: Text(
+            '👋 Welcome',
+            style: FlutterFlowTheme.of(context).title1,
+          ),
         ),
         actions: [],
         centerTitle: false,
@@ -252,8 +255,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('Login');
                   },
                   text: 'Login',
                   options: FFButtonOptions(
@@ -278,8 +281,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('Login');
                   },
                   text: 'Register',
                   options: FFButtonOptions(

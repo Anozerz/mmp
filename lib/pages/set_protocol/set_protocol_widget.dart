@@ -548,10 +548,12 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Set your daily mindful minutes.',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                      Expanded(
+                        child: Text(
+                          'Set your daily mindful minutes.',
+                          textAlign: TextAlign.start,
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
                       ),
                     ],
                   ),
@@ -642,10 +644,12 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Set your strict waivers.',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                      Expanded(
+                        child: Text(
+                          'Set your strict waivers.',
+                          textAlign: TextAlign.start,
+                          style: FlutterFlowTheme.of(context).bodyText1,
+                        ),
                       ),
                     ],
                   ),
@@ -908,14 +912,19 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Set your hours of sleep per night.',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Nunito',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontWeight: FontWeight.normal,
-                            ),
+                      Expanded(
+                        child: Text(
+                          'Set your hours of sleep per night.',
+                          textAlign: TextAlign.start,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                                fontFamily: 'Nunito',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontWeight: FontWeight.normal,
+                              ),
+                        ),
                       ),
                     ],
                   ),
@@ -1015,7 +1024,7 @@ class _SetProtocolWidgetState extends State<SetProtocolWidget> {
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
-                                transitionType: PageTransitionType.rightToLeft,
+                                transitionType: PageTransitionType.leftToRight,
                                 duration: Duration(milliseconds: 360),
                               ),
                             },

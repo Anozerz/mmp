@@ -123,8 +123,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'HomePage': HomePageWidget(),
-      'Stats': StatsWidget(),
       'Protocol': ProtocolWidget(),
+      'Stats': StatsWidget(),
+      'Journey': JourneyWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
     return Scaffold(
@@ -145,25 +146,33 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               FFIcons.khome,
-              size: 30.0,
+              size: 28.0,
             ),
             label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
+              FFIcons.kfile,
+              size: 28.0,
+            ),
+            label: 'Protocol',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               FFIcons.kpieChart,
-              size: 30.0,
+              size: 28.0,
             ),
             label: 'Stats',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              FFIcons.kfile,
-              size: 30.0,
+              FFIcons.khistory,
+              size: 28.0,
             ),
-            label: 'Protocol',
+            label: 'Journey',
             tooltip: '',
           )
         ],
