@@ -70,7 +70,7 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
                       children: [
                         Expanded(
                           child: Lottie.network(
-                            'https://lottie.host/70a268cf-8214-4fd4-9b9e-ee891addaf13/XAHpb80Pbk.json',
+                            'https://lottie.host/6fd6fb56-899e-4d03-8e7e-3a8c7a972b95/pjhe7vE8CN.json',
                             width: 75.0,
                             height: 75.0,
                             fit: BoxFit.cover,
