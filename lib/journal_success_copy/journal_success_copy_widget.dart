@@ -60,21 +60,26 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Spacer(),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Lottie.asset(
-                        'assets/lottie_animations/29344-confetti-heart-optimized.json',
-                        width: 75.0,
-                        height: 75.0,
-                        fit: BoxFit.cover,
-                        repeat: false,
-                        animate: true,
-                      ),
-                    ],
+                Expanded(
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Lottie.asset(
+                            'assets/lottie_animations/29344-confetti-heart-optimized.json',
+                            width: 75.0,
+                            height: 75.0,
+                            fit: BoxFit.cover,
+                            repeat: false,
+                            animate: true,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(
