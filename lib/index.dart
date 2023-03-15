@@ -16,3 +16,5 @@ export '/pages/protocol_success/protocol_success_widget.dart'
     show ProtocolSuccessWidget;
 export '/pages/journal/journal_success/journal_success_widget.dart'
     show JournalSuccessWidget;
+export '/journal_success_copy/journal_success_copy_widget.dart'
+    show JournalSuccessCopyWidget;

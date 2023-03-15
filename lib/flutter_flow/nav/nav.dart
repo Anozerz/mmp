@@ -151,6 +151,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'JournalSuccess',
               path: 'journalSuccess',
               builder: (context, params) => JournalSuccessWidget(),
+            ),
+            FFRoute(
+              name: 'JournalSuccessCopy',
+              path: 'journalSuccessCopy',
+              builder: (context, params) => JournalSuccessCopyWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
