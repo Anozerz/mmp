@@ -64,10 +64,10 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Lottie.network(
-                          'https://lottiefiles.com/78540-confetti-congratulation-sparkle',
-                          width: 300.0,
-                          height: 300.0,
+                        Lottie.asset(
+                          'assets/lottie_animations/94888-confetti02-optimized.json',
+                          width: 150.0,
+                          height: 150.0,
                           fit: BoxFit.cover,
                           repeat: false,
                           animate: true,
