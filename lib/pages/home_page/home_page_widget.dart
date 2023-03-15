@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -346,6 +347,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                   ),
+                ),
+                Lottie.asset(
+                  'assets/lottie_animations/monkk_confetti.json',
+                  width: MediaQuery.of(context).size.width * 1.0,
+                  height: 260.0,
+                  fit: BoxFit.cover,
+                  repeat: false,
+                  animate: true,
                 ),
                 Padding(
                   padding:
