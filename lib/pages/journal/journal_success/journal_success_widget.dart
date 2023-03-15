@@ -66,7 +66,7 @@ class _JournalSuccessWidgetState extends State<JournalSuccessWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Lottie.asset(
-                        'assets/lottie_animations/monkk_success.json',
+                        'assets/lottie_animations/monkk_confetti.json',
                         width: 75.0,
                         height: 75.0,
                         fit: BoxFit.cover,
