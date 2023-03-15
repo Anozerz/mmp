@@ -66,8 +66,8 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
                       children: [
                         Lottie.network(
                           'https://lottiefiles.com/78540-confetti-congratulation-sparkle',
-                          width: MediaQuery.of(context).size.width * 1.0,
-                          height: 360.0,
+                          width: 300.0,
+                          height: 300.0,
                           fit: BoxFit.cover,
                           repeat: false,
                           animate: true,
