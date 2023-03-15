@@ -64,8 +64,8 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Lottie.asset(
-                          'assets/lottie_animations/94888-confetti02-optimized.json',
+                        Lottie.network(
+                          'https://lottie.host/e5530c09-2324-45e2-a550-27d689bd6cc8/UF4TfPOHix.json',
                           width: MediaQuery.of(context).size.width * 1.0,
                           height: 360.0,
                           fit: BoxFit.cover,
