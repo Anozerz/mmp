@@ -16,4 +16,3 @@ export '/pages/protocol_success/protocol_success_widget.dart'
     show ProtocolSuccessWidget;
 export '/pages/journal/journal_success/journal_success_widget.dart'
     show JournalSuccessWidget;
-export '/pages/test/test_widget.dart' show TestWidget;

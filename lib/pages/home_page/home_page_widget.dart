@@ -419,8 +419,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FFButtonWidget(
-                                onPressed: () async {
-                                  context.pushNamed('test');
+                                onPressed: () {
+                                  print('Button pressed ...');
                                 },
                                 text: 'Let\'s start',
                                 options: FFButtonOptions(
