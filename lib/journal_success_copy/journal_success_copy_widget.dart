@@ -67,7 +67,7 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Lottie.network(
-                        'https://lottie.host/6fd6fb56-899e-4d03-8e7e-3a8c7a972b95/pjhe7vE8CN.json',
+                        'https://lottie.host/0216593c-74d1-46f6-91a3-d240dfe7e93c/LdGNR6ZnJ0.json',
                         width: MediaQuery.of(context).size.width * 1.0,
                         height: 220.0,
                         fit: BoxFit.scaleDown,
