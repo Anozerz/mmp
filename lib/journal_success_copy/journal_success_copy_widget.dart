@@ -59,7 +59,6 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Spacer(),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
                   child: Row(
@@ -69,7 +68,7 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
                       Lottie.network(
                         'https://lottie.host/0216593c-74d1-46f6-91a3-d240dfe7e93c/LdGNR6ZnJ0.json',
                         width: MediaQuery.of(context).size.width * 1.0,
-                        height: 220.0,
+                        height: MediaQuery.of(context).size.height * 0.4,
                         fit: BoxFit.scaleDown,
                         repeat: false,
                         animate: true,
