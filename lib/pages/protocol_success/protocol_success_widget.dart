@@ -65,8 +65,8 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Lottie.network(
-                        'https://lottie.host/fe0c1b43-6f4e-4df7-9958-2f67497b0fa0/xFEY8bulKg.json',
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        'https://lottie.host/a0d3b586-32bb-4734-88da-b965db4d7500/1T4qx41Nid.json',
+                        width: 150.0,
                         height: MediaQuery.of(context).size.height * 0.3,
                         fit: BoxFit.scaleDown,
                         repeat: false,
