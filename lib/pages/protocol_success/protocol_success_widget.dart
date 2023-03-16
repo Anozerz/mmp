@@ -66,8 +66,8 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
                     children: [
                       Lottie.network(
                         'https://lottie.host/a0d3b586-32bb-4734-88da-b965db4d7500/1T4qx41Nid.json',
-                        width: 150.0,
-                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.95,
+                        height: MediaQuery.of(context).size.height * 0.22,
                         fit: BoxFit.scaleDown,
                         repeat: false,
                         animate: true,
