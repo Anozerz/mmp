@@ -12,9 +12,9 @@ export '/pages/journal/journal_page2/journal_page2_widget.dart'
 export '/pages/journal/journal_page3/journal_page3_widget.dart'
     show JournalPage3Widget;
 export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
-export '/pages/protocol_success/protocol_success_widget.dart'
-    show ProtocolSuccessWidget;
 export '/pages/journal/journal_success/journal_success_widget.dart'
     show JournalSuccessWidget;
-export '/journal_success_copy/journal_success_copy_widget.dart'
-    show JournalSuccessCopyWidget;
+export '/pages/protocol_success/protocol_success_widget.dart'
+    show ProtocolSuccessWidget;
+export '/pages/journal/journal_page/journal_page_widget.dart'
+    show JournalPageWidget;

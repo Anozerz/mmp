@@ -160,7 +160,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed(
-                                    'JournalPage1',
+                                    'JournalPage',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -420,7 +420,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('JournalSuccessCopy');
+                                  context.pushNamed('ProtocolSuccess');
                                 },
                                 text: 'Let\'s start',
                                 options: FFButtonOptions(
