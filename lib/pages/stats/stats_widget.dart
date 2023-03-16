@@ -620,6 +620,7 @@ class _StatsWidgetState extends State<StatsWidget> {
                         onPressed: () async {
                           GoRouter.of(context).prepareAuthEvent();
                           await signOut();
+                          GoRouter.of(context).clearRedirectLocation();
 
                           context.goNamedAuth('Login', mounted);
                         },
