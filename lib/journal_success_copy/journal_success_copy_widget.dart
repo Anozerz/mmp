@@ -70,7 +70,7 @@ class _JournalSuccessCopyWidgetState extends State<JournalSuccessCopyWidget> {
                         'https://lottie.host/6fd6fb56-899e-4d03-8e7e-3a8c7a972b95/pjhe7vE8CN.json',
                         width: 360.0,
                         height: 220.0,
-                        fit: BoxFit.fill,
+                        fit: BoxFit.scaleDown,
                         repeat: false,
                         animate: true,
                       ),
