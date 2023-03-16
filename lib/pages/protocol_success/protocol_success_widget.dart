@@ -17,8 +17,7 @@ class ProtocolSuccessWidget extends StatefulWidget {
   _ProtocolSuccessWidgetState createState() => _ProtocolSuccessWidgetState();
 }
 
-class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget>
-    with TickerProviderStateMixin {
+class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget> {
   late ProtocolSuccessModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -40,7 +39,6 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget>
 
   @override
   Widget build(BuildContext context) {
-    final lottieAnimationController = AnimationController(vsync: this);
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -71,9 +69,7 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget>
                         width: MediaQuery.of(context).size.width * 0.95,
                         height: MediaQuery.of(context).size.height * 0.22,
                         fit: BoxFit.scaleDown,
-                        controller: lottieAnimationController,
-                        onLoaded: (composition) => lottieAnimationController
-                            .duration = composition.duration,
+                        animate: true,
                       ),
                     ],
                   ),
@@ -144,8 +140,8 @@ class _ProtocolSuccessWidgetState extends State<ProtocolSuccessWidget>
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
-                              await lottieAnimationController.forward();
-                              lottieAnimationController.reset();
+                              setState(
+                                  () => _model.lottieAnimationStatus = false);
                             },
                             text: 'Celebrate',
                             options: FFButtonOptions(

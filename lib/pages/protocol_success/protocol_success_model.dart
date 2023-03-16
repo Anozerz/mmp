@@ -9,9 +9,16 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class ProtocolSuccessModel extends FlutterFlowModel {
+  ///  State fields for stateful widgets in this page.
+
+  // State field(s) for LottieAnimation widget.
+  late bool lottieAnimationStatus;
+
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    lottieAnimationStatus = true;
+  }
 
   void dispose() {}
 
