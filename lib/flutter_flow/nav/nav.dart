@@ -123,21 +123,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : JourneyWidget(),
             ),
             FFRoute(
-              name: 'JournalPage1',
-              path: 'journalPage1',
-              builder: (context, params) => JournalPage1Widget(),
-            ),
-            FFRoute(
-              name: 'JournalPage2',
-              path: 'journalPage2',
-              builder: (context, params) => JournalPage2Widget(),
-            ),
-            FFRoute(
-              name: 'JournalPage3',
-              path: 'journalPage3',
-              builder: (context, params) => JournalPage3Widget(),
-            ),
-            FFRoute(
               name: 'Onboarding',
               path: 'onboarding',
               builder: (context, params) => OnboardingWidget(),
@@ -156,6 +141,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'JournalPage',
               path: 'journalPage',
               builder: (context, params) => JournalPageWidget(),
+            ),
+            FFRoute(
+              name: 'ReflectionPage',
+              path: 'reflectionPage',
+              builder: (context, params) => ReflectionPageWidget(),
+            ),
+            FFRoute(
+              name: 'ReflectionSuccess',
+              path: 'reflectionSuccess',
+              builder: (context, params) => ReflectionSuccessWidget(),
+            ),
+            FFRoute(
+              name: 'JournalEntry',
+              path: 'journalEntry',
+              builder: (context, params) => JournalEntryWidget(
+                journalEntry: params.getParam('journalEntry',
+                    ParamType.DocumentReference, false, ['entries']),
+              ),
+            ),
+            FFRoute(
+              name: 'ReflectionEntry',
+              path: 'reflectionEntry',
+              builder: (context, params) => ReflectionEntryWidget(
+                reflectionEntry: params.getParam('reflectionEntry',
+                    ParamType.DocumentReference, false, ['entries']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

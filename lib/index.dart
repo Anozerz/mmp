@@ -1,20 +1,22 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/set_protocol/set_protocol_widget.dart' show SetProtocolWidget;
-export '/pages/protocol/protocol_widget.dart' show ProtocolWidget;
-export '/pages/stats/stats_widget.dart' show StatsWidget;
-export '/pages/login/login_widget.dart' show LoginWidget;
-export '/pages/journey/journey_widget.dart' show JourneyWidget;
-export '/pages/journal/journal_page1/journal_page1_widget.dart'
-    show JournalPage1Widget;
-export '/pages/journal/journal_page2/journal_page2_widget.dart'
-    show JournalPage2Widget;
-export '/pages/journal/journal_page3/journal_page3_widget.dart'
-    show JournalPage3Widget;
-export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
-export '/pages/journal/journal_success/journal_success_widget.dart'
+export '/main/home_page/home_page_widget.dart' show HomePageWidget;
+export '/main/set_protocol/set_protocol_widget.dart' show SetProtocolWidget;
+export '/main/protocol/protocol_widget.dart' show ProtocolWidget;
+export '/main/stats/stats_widget.dart' show StatsWidget;
+export '/utility/login/login_widget.dart' show LoginWidget;
+export '/main/journey/journey_widget.dart' show JourneyWidget;
+export '/utility/onboarding/onboarding_widget.dart' show OnboardingWidget;
+export '/main/entries/journal_success/journal_success_widget.dart'
     show JournalSuccessWidget;
-export '/pages/protocol_success/protocol_success_widget.dart'
+export '/main/protocol_success/protocol_success_widget.dart'
     show ProtocolSuccessWidget;
-export '/pages/journal/journal_page/journal_page_widget.dart'
+export '/main/entries/journal_page/journal_page_widget.dart'
     show JournalPageWidget;
+export '/main/entries/reflection_page/reflection_page_widget.dart'
+    show ReflectionPageWidget;
+export '/main/entries/reflection_success/reflection_success_widget.dart'
+    show ReflectionSuccessWidget;
+export '/main/entries/journal_entry/journal_entry_widget.dart'
+    show JournalEntryWidget;
+export '/main/entries/reflection_entry/reflection_entry_widget.dart'
+    show ReflectionEntryWidget;

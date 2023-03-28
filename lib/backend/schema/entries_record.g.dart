@@ -84,6 +84,55 @@ class _$EntriesRecordSerializer implements StructuredSerializer<EntriesRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
+    value = object.reflectionActivity;
+    if (value != null) {
+      result
+        ..add('reflectionActivity')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.reflectionPositivity;
+    if (value != null) {
+      result
+        ..add('reflectionPositivity')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.reflectionAchievment;
+    if (value != null) {
+      result
+        ..add('reflectionAchievment')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.reflectionNotes;
+    if (value != null) {
+      result
+        ..add('reflectionNotes')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.reflectionMindfulness;
+    if (value != null) {
+      result
+        ..add('reflectionMindfulness')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.reflectionCheck;
+    if (value != null) {
+      result
+        ..add('reflectionCheck')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.journalCheck;
+    if (value != null) {
+      result
+        ..add('journalCheck')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -145,6 +194,34 @@ class _$EntriesRecordSerializer implements StructuredSerializer<EntriesRecord> {
           result.createdTime = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
+        case 'reflectionActivity':
+          result.reflectionActivity = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'reflectionPositivity':
+          result.reflectionPositivity = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'reflectionAchievment':
+          result.reflectionAchievment = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'reflectionNotes':
+          result.reflectionNotes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'reflectionMindfulness':
+          result.reflectionMindfulness = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'reflectionCheck':
+          result.reflectionCheck = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'journalCheck':
+          result.journalCheck = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -178,6 +255,20 @@ class _$EntriesRecord extends EntriesRecord {
   @override
   final DateTime? createdTime;
   @override
+  final bool? reflectionActivity;
+  @override
+  final String? reflectionPositivity;
+  @override
+  final String? reflectionAchievment;
+  @override
+  final String? reflectionNotes;
+  @override
+  final String? reflectionMindfulness;
+  @override
+  final bool? reflectionCheck;
+  @override
+  final bool? journalCheck;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$EntriesRecord([void Function(EntriesRecordBuilder)? updates]) =>
@@ -193,6 +284,13 @@ class _$EntriesRecord extends EntriesRecord {
       this.journalNotes,
       this.user,
       this.createdTime,
+      this.reflectionActivity,
+      this.reflectionPositivity,
+      this.reflectionAchievment,
+      this.reflectionNotes,
+      this.reflectionMindfulness,
+      this.reflectionCheck,
+      this.journalCheck,
       this.ffRef})
       : super._();
 
@@ -216,29 +314,38 @@ class _$EntriesRecord extends EntriesRecord {
         journalNotes == other.journalNotes &&
         user == other.user &&
         createdTime == other.createdTime &&
+        reflectionActivity == other.reflectionActivity &&
+        reflectionPositivity == other.reflectionPositivity &&
+        reflectionAchievment == other.reflectionAchievment &&
+        reflectionNotes == other.reflectionNotes &&
+        reflectionMindfulness == other.reflectionMindfulness &&
+        reflectionCheck == other.reflectionCheck &&
+        journalCheck == other.journalCheck &&
         ffRef == other.ffRef;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc($jc(0, journalMood.hashCode),
-                                        journalGratitude.hashCode),
-                                    journalTask1.hashCode),
-                                journalTask2.hashCode),
-                            journalTask3.hashCode),
-                        journalAvoidance1.hashCode),
-                    journalNotes.hashCode),
-                user.hashCode),
-            createdTime.hashCode),
-        ffRef.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, journalMood.hashCode);
+    _$hash = $jc(_$hash, journalGratitude.hashCode);
+    _$hash = $jc(_$hash, journalTask1.hashCode);
+    _$hash = $jc(_$hash, journalTask2.hashCode);
+    _$hash = $jc(_$hash, journalTask3.hashCode);
+    _$hash = $jc(_$hash, journalAvoidance1.hashCode);
+    _$hash = $jc(_$hash, journalNotes.hashCode);
+    _$hash = $jc(_$hash, user.hashCode);
+    _$hash = $jc(_$hash, createdTime.hashCode);
+    _$hash = $jc(_$hash, reflectionActivity.hashCode);
+    _$hash = $jc(_$hash, reflectionPositivity.hashCode);
+    _$hash = $jc(_$hash, reflectionAchievment.hashCode);
+    _$hash = $jc(_$hash, reflectionNotes.hashCode);
+    _$hash = $jc(_$hash, reflectionMindfulness.hashCode);
+    _$hash = $jc(_$hash, reflectionCheck.hashCode);
+    _$hash = $jc(_$hash, journalCheck.hashCode);
+    _$hash = $jc(_$hash, ffRef.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
@@ -253,6 +360,13 @@ class _$EntriesRecord extends EntriesRecord {
           ..add('journalNotes', journalNotes)
           ..add('user', user)
           ..add('createdTime', createdTime)
+          ..add('reflectionActivity', reflectionActivity)
+          ..add('reflectionPositivity', reflectionPositivity)
+          ..add('reflectionAchievment', reflectionAchievment)
+          ..add('reflectionNotes', reflectionNotes)
+          ..add('reflectionMindfulness', reflectionMindfulness)
+          ..add('reflectionCheck', reflectionCheck)
+          ..add('journalCheck', journalCheck)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -300,6 +414,40 @@ class EntriesRecordBuilder
   DateTime? get createdTime => _$this._createdTime;
   set createdTime(DateTime? createdTime) => _$this._createdTime = createdTime;
 
+  bool? _reflectionActivity;
+  bool? get reflectionActivity => _$this._reflectionActivity;
+  set reflectionActivity(bool? reflectionActivity) =>
+      _$this._reflectionActivity = reflectionActivity;
+
+  String? _reflectionPositivity;
+  String? get reflectionPositivity => _$this._reflectionPositivity;
+  set reflectionPositivity(String? reflectionPositivity) =>
+      _$this._reflectionPositivity = reflectionPositivity;
+
+  String? _reflectionAchievment;
+  String? get reflectionAchievment => _$this._reflectionAchievment;
+  set reflectionAchievment(String? reflectionAchievment) =>
+      _$this._reflectionAchievment = reflectionAchievment;
+
+  String? _reflectionNotes;
+  String? get reflectionNotes => _$this._reflectionNotes;
+  set reflectionNotes(String? reflectionNotes) =>
+      _$this._reflectionNotes = reflectionNotes;
+
+  String? _reflectionMindfulness;
+  String? get reflectionMindfulness => _$this._reflectionMindfulness;
+  set reflectionMindfulness(String? reflectionMindfulness) =>
+      _$this._reflectionMindfulness = reflectionMindfulness;
+
+  bool? _reflectionCheck;
+  bool? get reflectionCheck => _$this._reflectionCheck;
+  set reflectionCheck(bool? reflectionCheck) =>
+      _$this._reflectionCheck = reflectionCheck;
+
+  bool? _journalCheck;
+  bool? get journalCheck => _$this._journalCheck;
+  set journalCheck(bool? journalCheck) => _$this._journalCheck = journalCheck;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -320,6 +468,13 @@ class EntriesRecordBuilder
       _journalNotes = $v.journalNotes;
       _user = $v.user;
       _createdTime = $v.createdTime;
+      _reflectionActivity = $v.reflectionActivity;
+      _reflectionPositivity = $v.reflectionPositivity;
+      _reflectionAchievment = $v.reflectionAchievment;
+      _reflectionNotes = $v.reflectionNotes;
+      _reflectionMindfulness = $v.reflectionMindfulness;
+      _reflectionCheck = $v.reflectionCheck;
+      _journalCheck = $v.journalCheck;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -352,10 +507,17 @@ class EntriesRecordBuilder
             journalNotes: journalNotes,
             user: user,
             createdTime: createdTime,
+            reflectionActivity: reflectionActivity,
+            reflectionPositivity: reflectionPositivity,
+            reflectionAchievment: reflectionAchievment,
+            reflectionNotes: reflectionNotes,
+            reflectionMindfulness: reflectionMindfulness,
+            reflectionCheck: reflectionCheck,
+            journalCheck: journalCheck,
             ffRef: ffRef);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

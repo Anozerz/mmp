@@ -28,6 +28,20 @@ abstract class EntriesRecord
 
   DateTime? get createdTime;
 
+  bool? get reflectionActivity;
+
+  String? get reflectionPositivity;
+
+  String? get reflectionAchievment;
+
+  String? get reflectionNotes;
+
+  String? get reflectionMindfulness;
+
+  bool? get reflectionCheck;
+
+  bool? get journalCheck;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -39,7 +53,14 @@ abstract class EntriesRecord
     ..journalTask2 = ''
     ..journalTask3 = ''
     ..journalAvoidance1 = ''
-    ..journalNotes = '';
+    ..journalNotes = ''
+    ..reflectionActivity = false
+    ..reflectionPositivity = ''
+    ..reflectionAchievment = ''
+    ..reflectionNotes = ''
+    ..reflectionMindfulness = ''
+    ..reflectionCheck = false
+    ..journalCheck = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('entries');
@@ -72,6 +93,13 @@ Map<String, dynamic> createEntriesRecordData({
   String? journalNotes,
   DocumentReference? user,
   DateTime? createdTime,
+  bool? reflectionActivity,
+  String? reflectionPositivity,
+  String? reflectionAchievment,
+  String? reflectionNotes,
+  String? reflectionMindfulness,
+  bool? reflectionCheck,
+  bool? journalCheck,
 }) {
   final firestoreData = serializers.toFirestore(
     EntriesRecord.serializer,
@@ -85,7 +113,14 @@ Map<String, dynamic> createEntriesRecordData({
         ..journalAvoidance1 = journalAvoidance1
         ..journalNotes = journalNotes
         ..user = user
-        ..createdTime = createdTime,
+        ..createdTime = createdTime
+        ..reflectionActivity = reflectionActivity
+        ..reflectionPositivity = reflectionPositivity
+        ..reflectionAchievment = reflectionAchievment
+        ..reflectionNotes = reflectionNotes
+        ..reflectionMindfulness = reflectionMindfulness
+        ..reflectionCheck = reflectionCheck
+        ..journalCheck = journalCheck,
     ),
   );
 
